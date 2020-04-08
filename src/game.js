@@ -27,7 +27,7 @@ class Game {
     this.canvas.setAttribute("width", this.containerWidth);
     this.canvas.setAttribute("height", this.containerHeight);
 
-    this.player = new Player(this.canvas, 3);
+    this.player = new Player(this.canvas, 30);
 
     // Add event listener for moving the player
     function handleKeyDown(event) {
@@ -54,7 +54,7 @@ class Game {
       // // 0. Our player was already created - via `game.start()`
 
       // // 1. Create new enemies randomly
-      if (Math.random() > 0.98) {
+      if (Math.random() > 0.95) {
         var randomY = this.canvas.height * Math.random();
         var newEnemy = new Enemy(this.canvas, randomY, 5);
         this.enemies.push(newEnemy);
