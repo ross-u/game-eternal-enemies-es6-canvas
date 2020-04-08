@@ -6,6 +6,22 @@
 
 <br>
 
+![img](https://media.giphy.com/media/JTOyPqjAX9ebs2fFv3/source.gif)
+
+<br>
+
+## Steps
+
+- Create Files & Initial Setup
+- Create the start screen and start game button
+- Create Game constructor, Player constructor, Enemy constructor and get elements needed for the game start
+- Add Player movement functionality and Instantiate the player object
+- Create the game loop using requestAnimationFrame() (updating positions, collisions, drawing players and enemies)
+- Implement the collision checking function
+- Implement the Game Over logic/sequence (remove game screen, show game over screen, restart, show score)
+
+<br>
+
 ## Create Files & Initial Setup
 
 <h2 style="background-color: #66D3FA; color: white; display: inline; padding: 10px; border-radius: 10;">1</h2>
@@ -902,7 +918,7 @@ startLoop () {
 
 <br>
 
-## Collision checking function
+## Implement the collision checking function
 
 <br>
 
