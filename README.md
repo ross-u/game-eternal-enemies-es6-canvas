@@ -1,4 +1,4 @@
-# Canvas Game - Eternal Enemies (ES6)
+# Canvas - Code Along (ES6)
 
 <br>
 
@@ -18,6 +18,8 @@ touch index.html src/main.js src/game.js src/player.js src/enemy.js css/style.cs
 
 code .
 ```
+
+<br>
 
 <h2 style="background-color: #66D3FA; color: white; display: inline; padding: 10px; border-radius: 10;">2</h2>
 
@@ -43,6 +45,8 @@ code .
   </body>
 </html>
 ```
+
+<br>
 
 <h2 style="background-color: #66D3FA; color: white; display: inline; padding: 10px; border-radius: 10;">3</h2>
 
@@ -133,6 +137,8 @@ body {
   flex: 1;
 }
 ```
+
+<br>
 
 <h2 style="background-color: #66D3FA; color: white; display: inline; padding: 10px; border-radius: 10;">4</h2>
 
@@ -230,6 +236,8 @@ function removeSplashScreen() {
 }
 ```
 
+<br>
+
 <h2 style="background-color: #66D3FA; color: white; display: inline; padding: 10px; border-radius: 10;">6</h2>
 
 ### Add the event listener to create the start game screen when the page loads
@@ -313,6 +321,8 @@ function startGame() {
 }
 ```
 
+<br>
+
 <h2 style="background-color: #66D3FA; color: white; display: inline; padding: 10px; border-radius: 10;">8</h2>
 
 ### Now we can update `startButton` to call `startGame` when it is clicked.
@@ -336,6 +346,8 @@ function createSplashScreen() {
 ## \*\*
 
 ###### Now the _Start_ button runs the callback that creates a new screen showing "Lives:" and "Score:"
+
+<br>
 
 <h2 style="background-color: #66D3FA; color: white; display: inline; padding: 10px; border-radius: 10;">9</h2>
 
@@ -1102,6 +1114,8 @@ function startGame() {
 }
 ```
 
+<br>
+
 <h2 style="background-color: #66D3FA; color: white; display: inline; padding: 10px; border-radius: 10;">30</h2>
 
 ### For the end implement the game status - remaining `lives` and the `score`.
@@ -1152,6 +1166,8 @@ startLoop () {
   window.requestAnimationFrame(loop);
 };
 ```
+
+<br>
 
 <h2 style="background-color: #66D3FA; color: white; display: inline; padding: 10px; border-radius: 10;">31</h2>
 
