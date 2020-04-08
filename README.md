@@ -1,10 +1,12 @@
-# Canvas - Code Along (ES6)
+# Canvas Game - Eternal Enemies (ES6)
 
 <br>
 
 ![img](https://media.giphy.com/media/JTOyPqjAX9ebs2fFv3/source.gif)
 
 <br>
+
+## Create Files & Initial Setup
 
 <h2 style="background-color: #66D3FA; color: white; display: inline; padding: 10px; border-radius: 10;">1</h2>
 
@@ -183,6 +185,10 @@ function endGame() {}
 
 <br>
 
+## Create the start screen and start game button
+
+<br>
+
 <h2 style="background-color: #66D3FA; color: white; display: inline; padding: 10px; border-radius: 10;">5</h2>
 
 ### Create functions for creating/removing the game screen:
@@ -349,6 +355,8 @@ function createSplashScreen() {
 
 <br>
 
+## Create Game constructor, Player constructor, Enemy constructor and get elements needed for the game start
+
 <h2 style="background-color: #66D3FA; color: white; display: inline; padding: 10px; border-radius: 10;">9</h2>
 
 ### Create a Game constructor
@@ -408,7 +416,7 @@ function startGame() {
 
 <h2 style="background-color: #66D3FA; color: white; display: inline; padding: 10px; border-radius: 10;">11</h2>
 
-### Create the `Game.prototype.start` method.
+### Create the `start` method on the `Game` class prototype.
 
 This method will be the initiator of every new game, and does the following :
 
@@ -583,6 +591,85 @@ draw() {
 
 <h2 style="background-color: #66D3FA; color: white; display: inline; padding: 10px; border-radius: 10;">15</h2>
 
+### Create the Enemy constructor
+
+##### `enemy.js`
+
+```js
+"use strict";
+
+class Enemy {
+  constructor(canvas, y, speed) {
+    this.canvas = canvas;
+    this.ctx = canvas.getContext("2d");
+    this.size = 20;
+    this.x = canvas.width + this.size;
+    this.y = y;
+    this.speed = speed;
+  }
+
+  draw() {}
+
+  updatePosition() {}
+
+  isInsideScreen() {}
+}
+```
+
+<br>
+
+<h2 style="background-color: #66D3FA; color: white; display: inline; padding: 10px; border-radius: 10;">16</h2>
+
+### Create the `Enemy` methods :
+
+### `draw`
+
+### `updatePosition`
+
+### `isInsideScreen`
+
+##### `enemy.js`
+
+```js
+// draw()  - method on the Enemy prototype
+
+draw () {
+  this.ctx.fillStyle = '#FF6F27';
+
+  // fillRect(x, y, width, height)
+  this.ctx.fillRect(this.x, this.y, this.size, this.size);
+};
+```
+
+##### `enemy.js`
+
+```js
+// updatePosition()  - method on the Enemy prototype
+
+updatePosition () {
+  this.x = this.x - this.speed;
+};
+```
+
+##### `enemy.js`
+
+```js
+// isInsideScreen()  - method on the Enemy prototype
+
+isInsideScreen () {
+  // if x plus half of its size is smaller then 0 return
+  return this.x + this.size / 2 > 0;
+};
+```
+
+<br>
+
+## Add movement functionality and Instantiate the player object
+
+<br>
+
+<h2 style="background-color: #66D3FA; color: white; display: inline; padding: 10px; border-radius: 10;">17</h2>
+
 ### Update method in `game.js` - `Game.prototype.start()`
 
 ##### 1. Create the `new` `Player` instance .
@@ -633,7 +720,7 @@ start () {
 
 <br>
 
-<h2 style="background-color: #66D3FA; color: white; display: inline; padding: 10px; border-radius: 10;">16</h2>
+<h2 style="background-color: #66D3FA; color: white; display: inline; padding: 10px; border-radius: 10;">18</h2>
 
 ### When the game starts, we can press UP and DOWN keys and print direction to the console, but we will not see the player ?
 
@@ -645,78 +732,7 @@ start () {
 
 <br>
 
-<h2 style="background-color: #66D3FA; color: white; display: inline; padding: 10px; border-radius: 10;">17</h2>
-
-### Before we create the loop, let's create the last constructor we will need - for the enemy
-
-##### `enemy.js`
-
-```js
-"use strict";
-
-class Enemy {
-  constructor(canvas, y, speed) {
-    this.canvas = canvas;
-    this.ctx = canvas.getContext("2d");
-    this.size = 20;
-    this.x = canvas.width + this.size;
-    this.y = y;
-    this.speed = speed;
-  }
-
-  draw() {}
-
-  updatePosition() {}
-
-  isInsideScreen() {}
-}
-```
-
-<br>
-
-<h2 style="background-color: #66D3FA; color: white; display: inline; padding: 10px; border-radius: 10;">18</h2>
-
-### Create the `Enemy` methods :
-
-### `draw`
-
-### `updatePosition`
-
-### `isInsideScreen`
-
-##### `enemy.js`
-
-```js
-// draw()  - method on the Enemy prototype
-
-draw () {
-  this.ctx.fillStyle = '#FF6F27';
-
-  // fillRect(x, y, width, height)
-  this.ctx.fillRect(this.x, this.y, this.size, this.size);
-};
-```
-
-##### `enemy.js`
-
-```js
-// updatePosition()  - method on the Enemy prototype
-
-updatePosition () {
-  this.x = this.x - this.speed;
-};
-```
-
-##### `enemy.js`
-
-```js
-// isInsideScreen()  - method on the Enemy prototype
-
-isInsideScreen () {
-  // if x plus half of its size is smaller then 0 return
-  return this.x + this.size / 2 > 0;
-};
-```
+## Create the game loop using `requestAnimationFrame()` (updating positions, collisions, drawing players and enemies)
 
 <br>
 
@@ -886,6 +902,10 @@ startLoop () {
 
 <br>
 
+## Collision checking function
+
+<br>
+
 <h2 style="background-color: #66D3FA; color: white; display: inline; padding: 10px; border-radius: 10;">24</h2>
 
 ### Implement the `player` and `enemies` collision checking
@@ -965,6 +985,10 @@ didCollide(enemy) {
 ## \*\*
 
 ###### Now when a collision occurs we print out the player's `lives` to the console.
+
+<br>
+
+## Implement the game over logic/sequence (remove game screen, show game over screen, restart, show score)
 
 <br>
 
