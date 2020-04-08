@@ -6,8 +6,6 @@
 
 <br>
 
-### [Code Along Notes and Finished Game Code - Repo](https://github.com/ross-u/Canvas-Game---Eternal-Enemies-ES6)
-
 <h2 style="background-color: #66D3FA; color: white; display: inline; padding: 10px; border-radius: 10;">1</h2>
 
 ### Create the project and the file structure
