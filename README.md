@@ -6,10 +6,6 @@
 
 <br>
 
-![img](https://media.giphy.com/media/JTOyPqjAX9ebs2fFv3/source.gif)
-
-<br>
-
 ## Steps
 
 - Create Files & Initial Setup
