@@ -1,4 +1,4 @@
-# Canvas - Code Along (ES6)
+# Canvas Game - Eternal Enemies (ES6)
 
 <br>
 
