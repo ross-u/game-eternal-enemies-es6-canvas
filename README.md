@@ -102,7 +102,8 @@ p {
 
 html,
 body {
-  height: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .container {
