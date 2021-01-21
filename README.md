@@ -171,7 +171,7 @@ let gameOverScreen;
 // Creates DOM elements from a string representation
 function buildDom() {}
 
-// -- splash screen
+// -- splash (start) screen
 
 function createSplashScreen() {}
 
